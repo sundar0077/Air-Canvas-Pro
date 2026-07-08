@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#05050a; color:white; font-family:'Inter',sans-serif; overflow:hidden; }
+
+.landing {
+    position:fixed; top:0; left:0; width:100%; height:100%; 
+    background:radial-gradient(circle at center, #1a0033, #000);
+    display:flex; align-items:center; justify-content:center; z-index:100;
+}
+.hero { text-align:center; max-width:700px; }
+.logo { font-size:4.5rem; font-weight:700; margin-bottom:10px; }
+.accent { color:#00f5ff; }
+h1 { font-size:3.2rem; margin:20px 0; font-family:'Space Grotesk',sans-serif; }
+.subtitle { font-size:1.3rem; color:#aaa; margin-bottom:40px; }
+.features { display:flex; gap:25px; justify-content:center; margin:40px 0; flex-wrap:wrap; }
+.feature { background:rgba(255,255,255,0.08); padding:12px 24px; border-radius:50px; font-size:1.1rem; }
+.start-btn {
+    padding:18px 60px; font-size:1.4rem; background:#00f5ff; color:#000; border:none;
+    border-radius:50px; cursor:pointer; font-weight:600; margin-top:30px;
+    box-shadow:0 0 30px #00f5ff88;
+}
+.permission-note { margin-top:40px; color:#666; font-size:0.95rem; }
+
+.app { height:100vh; position:relative; }
+canvas { position:absolute; top:0; left:0; }
+video { position:absolute; top:20px; right:20px; width:260px; height:195px; border:4px solid #0ff; border-radius:16px; z-index:5; transform:scaleX(-1); }
+
+.hud { position:absolute; top:0; left:0; width:100%; height:100%; z-index:10; pointer-events:none; }
+.scanline {
+    position:absolute; top:0; left:0; width:100%; height:5px;
+    background:linear-gradient(transparent, #00ffff66, transparent);
+    animation:scan 4.5s linear infinite;
+}
+.corner {
+    position:absolute; color:#00ffff; font-family:'Space Grotesk',sans-serif;
+    padding:10px 20px; background:rgba(0,0,0,0.7); border:1px solid #00ffff44; border-radius:6px;
+}
+.corner--top-left { top:25px; left:25px; }
+.corner--top-right { top:25px; right:25px; }
+
+.color-bar {
+    position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+    background:rgba(0,0,0,0.8); padding:12px; border-radius:50px; display:flex; gap:12px;
+    border:1px solid #00ffff33;
+}
+.color-bar button {
+    width:48px; height:48px; border:none; border-radius:50%; cursor:pointer;
+    box-shadow:0 4px 15px rgba(0,0,0,0.5);
+}
+
+@keyframes scan { 0%{transform:translateY(-20px)} 100%{transform:translateY(105vh)} }
+.hidden { display:none !important; }
+.login-page {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #0a001f, #1a0033);
+    display: flex; align-items: center; justify-content: center; z-index: 200;
+}
+.login-container {
+    background: rgba(15, 15, 35, 0.95); padding: 50px 40px; border-radius: 20px;
+    width: 380px; text-align: center; border: 1px solid #00ffff44;
+    box-shadow: 0 20px 60px rgba(0, 255, 255, 0.1);
+}
+.login-container .logo { font-size: 3rem; margin-bottom: 10px; }
+.login-container h2 { color: #00ffff; margin: 15px 0; }
+.form-group { margin: 15px 0; }
+.form-group input {
+    width: 100%; padding: 14px; background: #111122; border: 1px solid #00ffff44;
+    border-radius: 8px; color: white; font-size: 1rem;
+}
+.login-btn {
+    width: 100%; padding: 16px; margin-top: 20px; background: #00f5ff; color: black;
+    border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+}
+.demo-info { margin-top: 25px; font-size: 0.9rem; color: #888; }

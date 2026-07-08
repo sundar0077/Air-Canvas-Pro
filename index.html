@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirCanvas Pro • Intelligent Air Paint</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+</head>
+<body>
+    <!-- LOGIN PAGE -->
+    <div id="login-page" class="login-page">
+        <div class="login-container">
+            <div class="logo">AIR<span class="accent">CANVAS</span></div>
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Sign in to access your Air Studio</p>
+            
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username (demo / admin)" value="demo">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" value="1234">
+            </div>
+            
+            <button onclick="login()" class="login-btn">LOGIN TO AIRCANVAS</button>
+            
+            <p class="demo-info">Demo Credentials:<br>
+                <strong>username:</strong> demo | <strong>password:</strong> 1234
+            </p>
+        </div>
+    </div>
+
+    <!-- LANDING PAGE -->
+    <div id="landing" class="landing hidden">
+        <div class="hero">
+            <div class="logo">AIR<span class="accent">CANVAS</span></div>
+            <h1>Paint in the Air</h1>
+            <p class="subtitle">Professional AI-powered gesture drawing studio</p>
+            
+            <div class="features">
+                <div class="feature">✍️ Index Finger — Draw</div>
+                <div class="feature">🌈 Left Index — Change Color</div>
+                <div class="feature">🖐️ Both Open Hands — Erase All</div>
+                <div class="feature">🔄 Auto Shape Recognition</div>
+            </div>
+
+            <button onclick="startAirDrawing()" class="start-btn">
+                START AIR DRAWING
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <div id="app" class="app hidden">
+        <canvas id="canvas"></canvas>
+        <video id="video" autoplay playsinline muted></video>
+
+        <div class="hud">
+            <div class="scanline"></div>
+            <div class="corner corner--top-left">AIR PAINT v3.1</div>
+            <div class="corner corner--top-right" id="gesture">READY</div>
+        </div>
+
+        <div class="color-bar">
+            <button onclick="changeColor('#00ffff')" style="background:#00ffff"></button>
+            <button onclick="changeColor('#ff00ff')" style="background:#ff00ff"></button>
+            <button onclick="changeColor('#ffff00')" style="background:#ffff00"></button>
+            <button onclick="changeColor('#ff6600')" style="background:#ff6600"></button>
+            <button onclick="changeColor('#ffffff')" style="background:#ffffff"></button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
